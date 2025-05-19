@@ -16,7 +16,16 @@ Adapted from: https://leetcode.com/problems/two-sum/
 """
 
 def two_sum(nums, target):
-    pass
+    for first_pos, first in enumerate(nums):
+        for second_pos in range(first_pos + 1, len(nums)):
+            second = nums[second_pos]
+
+            if first + second == target:
+                return [first_pos, second_pos]
+            
+    return []
+
+
 
 assert two_sum([2, 7, 11, 15], 9) == [0, 1]
 assert two_sum([5, 7, 3, 15], 22) == [1, 3]
